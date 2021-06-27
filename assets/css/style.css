@@ -25,6 +25,7 @@ html {
 }
 
 body {
+    position: relative;
   font-family: "Poppins", sans-serif;
   color: var(--dark);
   font-weight: 500;
@@ -47,30 +48,6 @@ body {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
 }
 
 /* --------------------- Buttons --------------------- */
@@ -115,6 +92,28 @@ body {
   transform: none;
 }
 
+/* --------------------- Preloader --------------------- */
+.preloader {
+	background-color: rgba(0,0,0, 0.9);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 99999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.preloader-icon {
+    background-image: url(../images/preloader.svg);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+}
+
 /* --------------------- Navbar --------------------- */
 .nav {
   background-color: var(--white);
@@ -148,26 +147,23 @@ body {
 
 /* --------------------- Users --------------------- */
 #users {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-gap: 3rem;
   justify-content: center;
-  margin: 0 -1.5rem;
 }
 
 .user {
-  flex: 0 0 25%;
-  max-width: 25%;
-  margin: 1.5rem;
   padding: 3rem;
   text-align: center;
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(187, 186, 186, 0.4);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.user:hover{
-    box-shadow: 0 0 1rem rgba(187, 186, 186, 0.7); 
+.user:hover {
+  box-shadow: 0 0 1rem rgba(187, 186, 186, 0.7);
 }
 
 .user__icon {
@@ -190,24 +186,21 @@ body {
   display: block;
   font-size: 1.5rem;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .user__details span:not(:last-child) {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .user__details span i {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-right: 0.5rem;
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
 }
 
 /* --------------------- Posts --------------------- */
-#posts {
-  width: 80%;
-  margin: 0 auto;
-}
 
 #posts .btn-link {
   padding: 0;
@@ -227,7 +220,7 @@ body {
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(187, 186, 186, 0.4);
   padding: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -243,4 +236,56 @@ body {
 
 .post__body {
   font-size: 1.6rem;
+}
+
+/* --------------------- Footer --------------------- */
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: .5rem 0;
+}
+
+/* --------------------- Media Queries --------------------- */
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .post {
+    padding: 1.5rem;
+  }
 }
