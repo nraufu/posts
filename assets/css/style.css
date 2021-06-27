@@ -93,15 +93,26 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
-.btn:active, .btn:focus {
-    outline: none;
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+.btn:active,
+.btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
-    background-color: var(--blue);
-    color: var(--white);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-link {
+  color: var(--black);
+}
+
+.btn-link:hover {
+  box-shadow: none;
+  text-decoration: underline;
+  transform: none;
 }
 
 /* --------------------- Navbar --------------------- */
@@ -112,6 +123,8 @@ body {
 }
 
 .nav__logo {
+  text-decoration: none;
+  color: var(--black);
   font-size: 1.8rem;
   text-transform: uppercase;
 }
@@ -123,14 +136,14 @@ body {
 
 /* --------------------- Error --------------------- */
 #error {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--red);
+  text-align: center;
+  font-size: 2rem;
+  color: var(--red);
 }
 
 #error p {
-    display: block;
-    margin: 120px auto;
+  display: block;
+  margin: 120px auto;
 }
 
 /* --------------------- Users --------------------- */
@@ -150,24 +163,84 @@ body {
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(187, 186, 186, 0.4);
+  transition: all .5s;
+}
+
+.user:hover{
+    box-shadow: 0 0 1rem rgba(187, 186, 186, 0.7); 
 }
 
 .user__icon {
   display: block;
   font-size: 4rem;
   color: var(--dark);
+  height: 8rem;
+  width: 8rem;
+  line-height: 8rem;
+  border: 2px solid var(--dark);
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .user__details {
-    margin: 1.5rem 0;
+  margin: 1.8rem 0;
 }
 
 .user__details span {
   display: block;
   font-size: 1.5rem;
   white-space: nowrap;
+  font-weight: 500;
 }
 
-.user__details span b {
-  margin-right: 0.2rem;
+.user__details span:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+.user__details span i {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-right: 0.5rem;
+}
+
+/* --------------------- Posts --------------------- */
+#posts {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#posts .btn-link {
+  padding: 0;
+}
+
+#posts .btn-link i {
+  font-size: 1.8rem;
+}
+
+#posts .user-name {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+
+.post {
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(187, 186, 186, 0.4);
+  padding: 3rem;
+  margin-bottom: 2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.post:hover {
+  box-shadow: 0 0 1rem rgba(187, 186, 186, 0.6);
+}
+
+.post__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post__body {
+  font-size: 1.6rem;
 }
