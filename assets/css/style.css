@@ -1,0 +1,173 @@
+/* --------------------- Configs --------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --dark: #343a40;
+  --black: #000;
+  --blue: #63c3f3;
+  --white: #fff;
+  --red: #df4b4b;
+}
+
+/*
+10px is equivalent to 0.625rem which can be change to 62.5% for font-size
+*/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--dark);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* --------------------- Flexible Container --------------------- */
+
+/*
+0 - 600px: phone
+600 - 900px: tablet portrait
+900 - 1200px: tablet landscape
+*/
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+/* --------------------- Buttons --------------------- */
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 3.5rem;
+  display: inline-block;
+  transition: all 0.5s;
+  position: relative;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.btn:active, .btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+}
+
+.btn-primary {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* --------------------- Navbar --------------------- */
+.nav {
+  background-color: var(--white);
+  padding: 1rem 0;
+  box-shadow: 0 0 1rem rgba(104, 103, 103, 0.2);
+}
+
+.nav__logo {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.nav__logo i {
+  font-size: 2rem;
+  margin-right: 0.2rem;
+}
+
+/* --------------------- Error --------------------- */
+#error {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--red);
+}
+
+#error p {
+    display: block;
+    margin: 120px auto;
+}
+
+/* --------------------- Users --------------------- */
+#users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -1.5rem;
+}
+
+.user {
+  flex: 0 0 25%;
+  max-width: 25%;
+  margin: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(187, 186, 186, 0.4);
+}
+
+.user__icon {
+  display: block;
+  font-size: 4rem;
+  color: var(--dark);
+}
+
+.user__details {
+    margin: 1.5rem 0;
+}
+
+.user__details span {
+  display: block;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.user__details span b {
+  margin-right: 0.2rem;
+}
